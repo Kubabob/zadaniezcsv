@@ -1,0 +1,23 @@
+import csv
+
+carbs_kcal = 4
+output_string = ''
+
+categories_count = {}
+
+with open('sampledatafoodinfo.csv', mode='r') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=';')
+    for row in csv_reader:
+        try:
+            if (int(row[3]) * 0.5) < (int(row[6]) * carbs_kcal):
+                output_string += f'{row}\n'
+                if row[0] not in categories_count:
+                    categories_count[row[0]] = 1
+                else:
+                    categories_count[row[0]] += 1
+        except:
+            pass
+                
+print(output_string)
+print(categories_count)
+        
