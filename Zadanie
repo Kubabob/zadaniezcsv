@@ -20,4 +20,6 @@ with open('sampledatafoodinfo.csv', mode='r') as csv_file:
                 
 print(output_string)
 print(categories_count)
+
+#test
         
